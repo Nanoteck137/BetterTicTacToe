@@ -2,17 +2,17 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-assimp.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-assimp-natives-windows.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-glfw.jar" sourcepath="W:/BetterTicTacToe/Jars/lwjgl-glfw-sources.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-glfw-natives-windows.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-natives-windows.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-openal.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-openal-natives-windows.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-opengl.jar" sourcepath="W:/BetterTicTacToe/Jars/lwjgl-opengl-sources.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-opengl-natives-windows.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-stb.jar"/>
-	<classpathentry kind="lib" path="W:/BetterTicTacToe/Jars/lwjgl-stb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-assimp-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-assimp.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-glfw-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-glfw.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-openal-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-openal.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-opengl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-opengl.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-stb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-stb.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
