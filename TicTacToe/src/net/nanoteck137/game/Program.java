@@ -1,7 +1,9 @@
 package net.nanoteck137.game;
 
+import org.lwjgl.glfw.GLFW;
+
 public class Program {
 	public static void main(String[] args) {
-		System.out.println("Hello World");
+		GLFW.glfwInit();
 	}
 }
