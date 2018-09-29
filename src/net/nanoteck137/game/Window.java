@@ -46,6 +46,12 @@ public class Window {
 			}
 		});
 		
+		glfwSetCursorPosCallback(window, new GLFWCursorPosCallback() {
+			public void invoke(long window, double x, double y) {
+				input.setMousePosition((float)x, (float)y);
+			}
+		});
+		
 		try ( MemoryStack stack = stackPush() ) {
 			IntBuffer pWidth = stack.mallocInt(1); // int*
 			IntBuffer pHeight = stack.mallocInt(1); // int*

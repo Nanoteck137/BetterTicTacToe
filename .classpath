@@ -5,14 +5,15 @@
 	<classpathentry kind="lib" path="Jars/lwjgl-assimp-natives-windows.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-assimp.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-glfw-natives-windows.jar"/>
-	<classpathentry kind="lib" path="Jars/lwjgl-glfw.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-glfw.jar" sourcepath="Jars/lwjgl-glfw-sources.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-natives-windows.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-openal-natives-windows.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-openal.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-opengl-natives-windows.jar"/>
-	<classpathentry kind="lib" path="Jars/lwjgl-opengl.jar"/>
+	<classpathentry kind="lib" path="Jars/lwjgl-opengl.jar" sourcepath="Jars/lwjgl-opengl-sources.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-stb-natives-windows.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl-stb.jar"/>
 	<classpathentry kind="lib" path="Jars/lwjgl.jar"/>
+	<classpathentry kind="lib" path="Jars/joml-1.9.11.jar" sourcepath="Jars/joml-1.9.11-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
