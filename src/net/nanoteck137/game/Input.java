@@ -1,7 +1,6 @@
 package net.nanoteck137.game;
 
 import org.joml.*;
-import org.lwjgl.glfw.*;
 
 public class Input {
 

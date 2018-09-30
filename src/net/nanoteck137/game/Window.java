@@ -28,6 +28,7 @@ public class Window {
 		
 		input = new Input();
 		
+		glfwWindowHint(GLFW_RESIZABLE, 0);
 		window = glfwCreateWindow(width, height, title, 0, 0);
 		if(window == 0) {
 			System.err.println("Error creating the window");

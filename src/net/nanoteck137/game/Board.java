@@ -1,6 +1,5 @@
 package net.nanoteck137.game;
 
-import java.awt.*;
 import java.lang.Math;
 
 import org.joml.*;
@@ -53,11 +52,12 @@ public class Board {
 
                 cell.selected = true;
                 cell.playerIndex = currentPlayer;
+             
+                checkBoard();
+                
+                currentPlayer++;
+                currentPlayer %= 2;
             }
-
-            checkBoard();
-            currentPlayer++;
-            currentPlayer %= 2;
         }
     }
 
@@ -65,6 +65,8 @@ public class Board {
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
                 Cell cell = cells[i + j * BOARD_CELLS];
+                if(reset)
+                	cell.color.w = 0.7f;
                 renderer.renderRect(i * 3 + 0.05f, j * 3 + 0.05f, 2.9f, 2.9f, cell.color);
             }
         }
@@ -76,7 +78,6 @@ public class Board {
                 cells[i + BOARD_CELLS].isValid(currentPlayer) &&
                 cells[i + (BOARD_CELLS * 2)].isValid(currentPlayer))
             {
-                System.out.println("Horizontal WIN: " + currentPlayer);
                 reset = true;
                 playerWon = currentPlayer;
                 return;
@@ -86,7 +87,6 @@ public class Board {
                 cells[i * 3 + 1].isValid(currentPlayer) &&
                 cells[i * 3 + 2].isValid(currentPlayer))
             {
-                System.out.println("Vertical WIN: " + currentPlayer);
                 reset = true;
                 playerWon = currentPlayer;
                 return;
@@ -97,7 +97,6 @@ public class Board {
                     cells[i + 4].isValid(currentPlayer) &&
                     cells[i + 4 * 2].isValid(currentPlayer))
                 {
-                    System.out.println("Diagonal WIN: " + currentPlayer);
                     reset = true;
                     playerWon = currentPlayer;
                     return;
@@ -109,7 +108,6 @@ public class Board {
                     cells[i + 2].isValid(currentPlayer) &&
                     cells[i + (2 * 2)].isValid(currentPlayer))
                 {
-                    System.out.println("Diagonal WIN 22222: " + currentPlayer);
                     reset = true;
                     playerWon = currentPlayer;
                     return;
