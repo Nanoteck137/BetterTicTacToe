@@ -1,10 +1,14 @@
-package net.nanoteck137.game;
+package net.nanoteck137.tictactoe;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 
 import org.joml.*;
 import org.lwjgl.opengl.*;
+
+import net.nanoteck137.tictactoe.app.*;
+import net.nanoteck137.tictactoe.game.*;
+import net.nanoteck137.tictactoe.graphics.*;
 
 public class Program {
 	
@@ -22,7 +26,7 @@ public class Program {
 	}
 	
 	private void init() {
-		window = new Window("Hello World", 800, 800);
+		window = new Window("TicTacToe", 800, 800);
 		renderer = new Renderer();
 		
 		board = new Board();
@@ -67,7 +71,6 @@ public class Program {
 	        if(!gameOver) {
 			    board.update(matrix, window.getInput());
 	        }
-
 
         	board.render(renderer);
 			

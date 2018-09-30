@@ -1,8 +1,11 @@
-package net.nanoteck137.game;
+package net.nanoteck137.tictactoe.game;
 
 import java.lang.Math;
 
 import org.joml.*;
+
+import net.nanoteck137.tictactoe.app.*;
+import net.nanoteck137.tictactoe.graphics.*;
 
 public class Board {
 

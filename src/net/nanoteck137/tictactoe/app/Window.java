@@ -1,4 +1,4 @@
-package net.nanoteck137.game;
+package net.nanoteck137.tictactoe.app;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryStack.*;

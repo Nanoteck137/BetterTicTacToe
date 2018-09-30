@@ -1,4 +1,4 @@
-package net.nanoteck137.game;
+package net.nanoteck137.tictactoe.graphics;
 
 import static org.lwjgl.opengl.GL11.*;
 

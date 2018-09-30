@@ -1,4 +1,4 @@
-package net.nanoteck137.game;
+package net.nanoteck137.tictactoe.game;
 
 import org.joml.*;
 
