@@ -7,17 +7,17 @@ import java.lang.Math;
 
 import org.joml.*;
 import org.lwjgl.opengl.*;
+import org.lwjgl.stb.*;
 
 public class Program {
 	
 	private Window window;
 	private Renderer renderer;
 	
-	private Vector4f[] cells = new Vector4f[] {
-		new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
-		new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
-		new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
-	};
+	private Board board;
+	
+	private boolean gameOver = false;
+	private int playerWon = -1;
 	
 	public Program() {
 		init();
@@ -27,6 +27,8 @@ public class Program {
 	private void init() {
 		window = new Window("Hello World", 800, 800);
 		renderer = new Renderer();
+		
+		board = new Board();
 	}
 	
 	private void loop() {
@@ -51,25 +53,23 @@ public class Program {
 			glfwPollEvents();
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			if(window.getInput().isButtonPressed(0)) {
-				Vector2f mousePos = window.getInput().getMousePosition();
-				
-				Vector3f test = new Vector3f(mousePos.x, 800 -mousePos.y, 0.0f);
-				Vector3f test2 = new Vector3f();
-				matrix.unproject(test, new int[] { 0, 0, 800, 800 }, test2);
-				
-				int x = (int)Math.floor(test2.x) / 3;
-				int y = (int)Math.floor(test2.y) / 3;
-				
-				cells[x + y * 3] = new Vector4f(0.0f, 1.0f, 0.0f, 1.0f);
-			}
+	        if(board.needReset()) {
+	            gameOver = true;
+	            playerWon = board.getPlayerWon();
+	        }
+
+	        if(!gameOver)
+			    board.update(matrix, window.getInput());
+
+            board.render(renderer);
 			
-			for(int i = 0; i < 3; i++) {
-				for(int j = 0; j < 3; j++) {
-					renderer.renderRect(i * 3.0f + 0.05f, j * 3.0f + 0.05f, 2.9f, 2.9f, cells[i + j * 3]);
+			if(gameOver) {
+				if(window.getInput().isButtonPressed(0)) {
+					board = new Board();
+					gameOver = false;
 				}
-			}
-			
+	        }
+            
 			window.update();
 			
 			if(window.closed()) {
