@@ -20,6 +20,8 @@ public class Program {
 	private boolean gameOver = false;
 	private int playerWon = -1;
 	
+	private Matrix4f projectionMatrix;
+	
 	public Program() {
 		init();
 		loop();
@@ -27,27 +29,30 @@ public class Program {
 	
 	private void init() {
 		window = new Window("TicTacToe", 800, 800);
-		renderer = new Renderer();
+		renderer = new LegacyRenderer();
 		
 		board = new Board();
-	}
-	
-	private void loop() {
+		
 		GL.createCapabilities();
 
-		Matrix4f matrix = new Matrix4f().ortho(0.0f, 9.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+		projectionMatrix = new Matrix4f().ortho(0.0f, 9.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 		
 		glMatrixMode(GL_PROJECTION_MATRIX);
 		glLoadIdentity();
 		
 		float[] matrixArr = new float[16];
-		matrix.get(matrixArr);
+		projectionMatrix.get(matrixArr);
 		
 		glLoadMatrixf(matrixArr);
 		
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		
+
+		System.out.println("OpenGL Version: " + glGetString(GL_VERSION));
+		System.out.println("OpenGL Renderer: " + glGetString(GL_RENDERER));
+	}
+	
+	private void loop() {
 		boolean running = true;
 		while(running) {
 			glfwPollEvents();
@@ -69,7 +74,7 @@ public class Program {
 	        }
 
 	        if(!gameOver) {
-			    board.update(matrix, window.getInput());
+			    board.update(projectionMatrix, window.getInput());
 	        }
 
         	board.render(renderer);
